@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="col-md-10 offset-md-1">
+    <h2><%= @user.email %></h2>
+    <p>Total recipes: <%= @user.recipes.count %></p>
+    <% if @user.recipes %>
+      <small><%= link_to "View User Recipes", user_recipes_url(@user, @user.recipes) %></small>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="col-md-6">
+  <div id="directions">
+    <h2>Directions </h2>
+      <% @recipe.directions.each.with_index(1) do |direction, i| %>
+        <h6><%= i %>. <%= direction.step %></h6>
+      <% end %>
+  </div>
+</div>

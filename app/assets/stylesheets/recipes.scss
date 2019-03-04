@@ -1,0 +1,103 @@
+// Place all the styles related to the recipes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@mixin box-shadow
+{
+	-webkit-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
+	-mox-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
+	box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
+}
+
+$red: #db6161;
+
+body
+{
+	background: #EBEEF3;
+}
+main_content
+{
+	padding: 0 0 50px 0;
+}
+
+.alert
+{
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 5px;
+	@include box-shadow;
+	background: white;
+	font-weight: bold;
+}
+
+.navbar
+{
+	margin-bottom: 50px;
+	@include box-shadow;
+	.navbar-brand
+	{
+		text-transform: uppercase;
+		letter-spacing: -1px;
+		font-weight: bold;
+		font-size: 25px;
+		a
+		{
+			color: $red;
+		}
+	}
+}
+
+.recipe
+{
+	background: white;
+	border-radius: 5px;
+	margin-bottom: 40px;
+	@include box-shadow;
+	.image_wrapper
+	{
+		max-width: 100%;
+		border-radius: 5px 5px 0 0;
+		overflow: hidden;
+	}
+	img
+	{
+		width: 100%;
+		-webkit-transition: all .3s ease-out;
+		-moz-transition: all .3s easy-out;
+		-o-transition: all .3s easy-out;
+		transition: all .3s easy-out;
+		&:hover
+		{
+			transform: scale(1.01);
+		}
+	}
+	h2
+	{
+		padding: 10px 5%;
+		margin: 0;
+		font-size: 20px;
+		font-weight: 500;
+		line-height: 1.5;
+		a
+		{
+			color: $red;
+		}
+	}
+}
+
+#recipe_top
+{
+	margin-bottom: 100px;
+}
+
+#recipe_info, #ingredients, #directions
+{
+	background: white;
+	@include box-shadow;
+	min-height: 360px;
+	border-radius: 5px;
+	padding: 2em 8%;
+}
+p.btn-secondary a{
+	color: #fff;
+}

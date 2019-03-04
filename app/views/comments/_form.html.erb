@@ -1,0 +1,10 @@
+<%= form_for ([@recipe, @comment]) do |f| %>
+	<%= f.label :title %>
+	<%= f.text_field :title, class: "form-control", placeholder: "Comment title" %>
+  <%= f.label :body %>
+	<%= f.text_area :body, class: "form-control", placeholder: "Comment text" %>
+	<br>
+	<%= f.hidden_field :recipe_id %>
+	<%= f.submit class: "btn btn-primary" %>
+<% end %>
+<br> <br>

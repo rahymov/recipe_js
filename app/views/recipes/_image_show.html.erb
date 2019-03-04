@@ -1,0 +1,10 @@
+<div class="col-md-5">
+  <% if @recipe.image.attached? %>
+    <span><%= image_tag @recipe.image.variant(resize: '500x500'), class: "recipe_image", placeholder: "image" %></span>
+  <% else %>
+    <%= image_tag "logo.jpg" %>
+  <% end %>
+  <% if current_user != @recipe.user %>
+    <p>Rate: <%= rating_for @recipe, 'title', enable_half: true, cancel_place: 'left' %></p>
+  <% end %>
+</div>

@@ -1,0 +1,18 @@
+<div class="row">
+	<% @recipes.each do |recipe| %>
+		<div class="col-md-4">
+			<div class="recipe">
+				<div class="image_wrapper">
+					<%= link_to  recipe do %>
+					<% if recipe.image.attached? %>
+						<%= image_tag recipe.image.variant(resize: '300x300') %>
+					<% else %>
+						<%= image_tag 'logo.jpg', size: "300x200" %>
+					<% end %>
+				</div>
+				<h4><%= link_to recipe.title, recipe  %></h4>
+				</div>
+			</div>
+		<% end %>
+	<% end %>
+</div>

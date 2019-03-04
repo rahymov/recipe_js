@@ -1,0 +1,13 @@
+<div class="col-md-6">
+  <div id="ingredients">
+    <h2>Ingredients</h2>
+    <ul>
+      <% @recipe.categories do |cat| %>
+        <h3><%= cat.name %></h3>
+      <% end %>
+      <% @recipe.ingredients.each.with_index(1) do |ingredient, i| %>
+        <h6><%=i%>. <%= ingredient.name %></h6>
+      <% end %>
+    </ul>
+  </div>
+</div>

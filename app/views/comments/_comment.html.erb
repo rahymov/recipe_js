@@ -1,0 +1,13 @@
+<div class="comment clearfix">
+	<div class="comment_content">
+		<p class="comment_title"><strong><%= comment.title %></strong></p>
+		<p class="comment_body"><%= comment.body %></p>
+		<small class="comment_time"><%= time_ago_in_words(comment.created_at) %> ago, by <strong><%= comment.user.email %></strong></small>
+	</div>
+	<% if comment.user == current_user %>
+	<p class="float-right">
+		<%= link_to "Delete",[comment.recipe, comment] , method: :delete, data: {confirm: "Are you sure?"} , class: "btn btn-danger" %>
+	</p>
+	<% end %>
+</div>
+<hr>

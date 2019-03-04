@@ -1,0 +1,72 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap";
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 1);
+}
+
+footer {
+  padding-top: 91px;
+  background-color: #111;
+}
+.pre-footer {
+  margin-top: -170px;
+  margin-bottom: -3.3%;
+}
+.pre-footer img {
+  width: 100%;
+}
+/* 02. Widget Footer
+   ==================================== */
+.footer {
+  width: 19%;
+  float: left;
+  display: inline-block;
+  margin-bottom: 115px;
+}
+.footer h4 {
+  font-size: 16px;
+  color: #fff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  font-family: "HelveticaNeue-Bold", serif;
+}
+
+.footer ul li {
+  list-style-type: none;
+  margin-bottom: 14px;
+}
+.footer ul li a {
+  font-size: 14px;
+  color: #c0dbf4;
+  letter-spacing: 1px;
+}
+.footer ul li a:hover {
+  color: #e8f4ff;
+}
+.footer p {
+  color: #c0dbf4;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+.footer.last {
+  width: 24%;
+  padding-left: 67px;
+}
+.footer .copyright{
+  text-align: center;
+}

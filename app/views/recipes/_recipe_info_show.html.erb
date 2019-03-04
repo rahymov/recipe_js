@@ -1,0 +1,10 @@
+<div class="col-md-7">
+  <div id="recipe_info">
+    <h1><%= @recipe.title %></h1>
+    <p class="description"><%= @recipe.description %></p>
+    <p>Submitted by <%= link_to @recipe.user.email, root_url %></p>
+    <% @recipe.categories.each do |cat| %>
+    <p class="btn btn-secondary"><%= link_to cat.name, category_recipes_path(cat) %></p>
+    <% end %>
+  </div>
+</div>
