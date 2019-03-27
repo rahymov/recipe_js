@@ -92,7 +92,19 @@ const listenForAllRecipesClick = () => {
     history.pushState(null, null, "recipes");
     getAllRecipes();
   })
-  
+  $(document).on('click', ".show-recipe", function(e){
+    e.preventDefault()
+
+    let id = $(this).attr('data-id')
+    fetch(`/recipes/${id}.json`)
+     .then(response => response.json())
+       .then(recipe => {
+         $('.app-container').html('')
+         let newRecipe = new Recipe(recipe)
+         let showRecipeHTML = newRecipe.recipeShowHTML()
+         $(".app-container").append(showRecipeHTML)
+     })
+  })
 }
 
 const getAllRecipes = () => {
@@ -133,4 +145,22 @@ class Recipe {
       `
     )
   }
+}
+
+Recipe.prototype.recipeIndexHTML = function(){
+
+  return(
+    `
+      <div class="row" id="recipes-list">
+        <div class="col-md-4">
+          <div class="recipe">
+            <div class="image_wrapper">
+              <a class="show-recipe" href="/recipes/${this.id}" data-id="${this.id}"><img src="${this.image}"></a>
+            </div>
+            <h4><a class="show-recipe" data-id="${this.id}" href="/recipes/${this.id}">${this.title}</a></h4>
+          </div>
+        </div>
+      </div>
+    `
+  )
 }
