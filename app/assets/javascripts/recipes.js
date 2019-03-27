@@ -204,5 +204,74 @@ Recipe.prototype.recipeShowHTML = function(){
     )
   }).join('')
 
+
+  return(
+    `
+      <div class="main_content">
+        <div id="recipe_top" class="row">
+          <div class="col-md-5">
+            <span><img src="${this.image}" class="recipe_image" placeholder="image"></span>
+          </div>
+          <div class="col-md-7">
+            <div id="recipe_info">
+              <h1>${this.title}</h1>
+              <p class="description">${this.description}</p>
+              <p>Submitted by  <strong>${this.user_email}</strong></p>
+
+                ${recipeCategories}
+
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div id="ingredients">
+              <h2>Ingredients</h2>
+              <ul>
+                <h6>${recipeIngredients}</h6>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div id="directions">
+              <h2>Directions </h2>
+                <h6>${recipeDirections}</h6>
+            </div>
+          </div>
+        </div><br>
+        <div class="row">
+          <div class="col-md-12 ">
+            <div class="btn-group">
+              <a href="/recipes">Back</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="comments">
+        <div class="row" id="comments-content">
+          <div class="col-md-8 offset-md-2">
+              <h3>${this.comments.length} Comments</h3>
+              ${recipeComments}
+
+              <h3>Add Comment: </h3>
+              <div>
+              <form class="new_comment" id="new_comment" action="/recipes/2/comments" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="JxQfUpt/s31l0taKK2qvC31h1EV4xSvByTQoONQLmBdPjuc8IfaWs+GUBNikKAbcBLl+l8vdaHG/ttauPmR3Sw==">
+                <label for="comment_title">Title</label>
+                <input class="form-control" placeholder="Comment title" type="text" name="comment[title]" id="comment_title">
+                <label for="comment_body">Body</label>
+                <textarea class="form-control" placeholder="Comment text" name="comment[body]" id="comment_body"></textarea>
+                <br>
+                <input type="hidden" name="comment[recipe_id]" id="comment_recipe_id">
+                <input type="submit" name="commit" value="Create Comment" class="btn btn-primary" id="create-comment" data-disable-with="Create Comment">
+               </form>
+              <br> <br>
+            </div>
+          </div>
+        </div>
+      </div>
+    `
+  )
   
 }
