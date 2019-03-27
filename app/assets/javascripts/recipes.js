@@ -187,4 +187,14 @@ Recipe.prototype.recipeShowHTML = function(){
     )
   }).join('')
 
+
+  let recipeIngredients = this.ingredients.map(ingredient => {
+    return(
+      `
+      <h6>${ingredient.name}</h6>
+      `
+    )
+  }).join('')
+
+  
 }
