@@ -65,6 +65,53 @@ $(() => {
   listenForAllRecipesClick()
 });
 // chekoh for click on navbar
+const listenForAllRecipesClick = () => {
+  $('#all-recipes').on('click', e => {
+    e.preventDefault();
+    history.pushState(null, null, "recipes");
+    getAllRecipes();
+  })
+  $(document).on('click', ".show-recipe", function(e){
+    e.preventDefault()
+
+    let id = $(this).attr('data-id')
+    fetch(`/recipes/${id}.json`)
+     .then(response => response.json())
+       .then(recipe => {
+         $('.app-container').html('')
+         let newRecipe = new Recipe(recipe)
+         let showRecipeHTML = newRecipe.recipeShowHTML()
+         $(".app-container").append(showRecipeHTML)
+     })
+  })
+}
+
+const listenForAllRecipesClick = () => {
+  $('#all-recipes').on('click', e => {
+    e.preventDefault();
+    history.pushState(null, null, "recipes");
+    getAllRecipes();
+  })
+  
+}
+
+const getAllRecipes = () => {
+  fetch(`/recipes.json`)
+    .then(response => response.json())
+      .then(recipes => {
+        $('.app-container').html('')
+        recipes.forEach((recipe) => {
+          let newRecipe = new Recipe(recipe)
+          let allRecipesHTML = newRecipe.recipeIndexHTML()
+          // debugger
+          $(".app-container").append(allRecipesHTML);
+          // console.log(newRecipe);
+    })
+  })
+}
+
+
+
 class Recipe {
   constructor(obj){
     this.id = obj.id
