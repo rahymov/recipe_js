@@ -5,6 +5,11 @@ class RecipesController < ApplicationController
   def index
     @search = Recipe.search(params[:q])
     @recipes = @search.result.order_by_created_at_desc
+
+    respond_to do |f|
+      f.html { render :index}
+      f.json { render json: @recipes}
+    end
     # @recipes = Recipe.all.order_by_created_at_desc
   end
 
@@ -28,6 +33,10 @@ class RecipesController < ApplicationController
   def show
     @reviews = Review.where(recipe_id: @recipe.id).order("created_at DESC")
     @comment = Comment.new
+    respond_to do |f|
+      f.html { render :show}
+      f.json {render json: @recipe}
+    end
   end
 
   def edit
