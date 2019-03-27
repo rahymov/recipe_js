@@ -21,6 +21,7 @@ gem 'ratyrate'
 gem 'cocoon', '~> 1.2', '>= 1.2.12'
 gem 'ransack', '~> 2.1'
 gem 'omniauth-facebook'
+gem 'active_model_serializers', '~> 0.10.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

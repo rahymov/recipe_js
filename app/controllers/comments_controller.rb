@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
 		@comment = @recipe.comments.build(comment_params)
     @comment.user = current_user
     @comment.save
-		redirect_to recipe_path(@recipe)
+		render partial: 'comment', layout: false, :locals => {:comment => @comment}
 	end
 
 	def destroy
