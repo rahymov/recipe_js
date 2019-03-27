@@ -196,5 +196,13 @@ Recipe.prototype.recipeShowHTML = function(){
     )
   }).join('')
 
+  let recipeDirections = this.directions.map(direction => {
+    return(
+      `
+        <h6>${direction.step}</h6>
+      `
+    )
+  }).join('')
+
   
 }
