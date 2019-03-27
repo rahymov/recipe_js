@@ -14,7 +14,11 @@ class CommentsController < ApplicationController
 		@comment = @recipe.comments.find(params[:id])
     if @comment.user == current_user
 		  @comment.destroy
-		  redirect_to recipe_path(@recipe)
+      respond_to do |f|
+        f.html {redirect_to recipe_path(@recipe)}
+        f.json {render json: @recipe, status: 201}
+        f.js {render 'comments.js'}
+      end
     else
       flash[:error] = "You not authorized."
       redirect_to recipe_path(@recipe)
