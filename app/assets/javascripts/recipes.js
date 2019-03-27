@@ -65,3 +65,25 @@ $(() => {
   listenForAllRecipesClick()
 });
 // chekoh for click on navbar
+class Recipe {
+  constructor(obj){
+    this.id = obj.id
+    this.title = obj.title
+    this.description = obj.description
+    this.image = obj.image
+    this.user_email = obj.user.email
+    // debugger
+    // this.user.email = obj.user.email
+    this.categories = obj.categories
+    this.ingredients = obj.ingredients
+    this.directions = obj.directions
+    this.comments = obj.comments
+  }
+  static newRecipeForm(){
+    return(
+      `
+
+      `
+    )
+  }
+}
