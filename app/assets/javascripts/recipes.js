@@ -86,26 +86,6 @@ const listenForAllRecipesClick = () => {
   })
 }
 
-const listenForAllRecipesClick = () => {
-  $('#all-recipes').on('click', e => {
-    e.preventDefault();
-    history.pushState(null, null, "recipes");
-    getAllRecipes();
-  })
-  $(document).on('click', ".show-recipe", function(e){
-    e.preventDefault()
-
-    let id = $(this).attr('data-id')
-    fetch(`/recipes/${id}.json`)
-     .then(response => response.json())
-       .then(recipe => {
-         $('.app-container').html('')
-         let newRecipe = new Recipe(recipe)
-         let showRecipeHTML = newRecipe.recipeShowHTML()
-         $(".app-container").append(showRecipeHTML)
-     })
-  })
-}
 
 const getAllRecipes = () => {
   fetch(`/recipes.json`)
@@ -177,7 +157,7 @@ Recipe.prototype.recipeShowHTML = function(){
       </div>
       `
     )
-  })
+  }).join('')
 
   let recipeCategories = this.categories.map(category => {
     return (
@@ -273,5 +253,5 @@ Recipe.prototype.recipeShowHTML = function(){
       </div>
     `
   )
-  
+
 }
