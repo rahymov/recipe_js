@@ -179,5 +179,12 @@ Recipe.prototype.recipeShowHTML = function(){
     )
   })
 
-  
+  let recipeCategories = this.categories.map(category => {
+    return (
+      `
+      <p class="btn btn-secondary">${category.name}</p>
+      `
+    )
+  }).join('')
+
 }
