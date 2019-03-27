@@ -164,3 +164,20 @@ Recipe.prototype.recipeIndexHTML = function(){
     `
   )
 }
+
+Recipe.prototype.recipeShowHTML = function(){
+  let recipeComments = this.comments.map(comment => {
+    return(
+      `
+
+      <div id="render-comments">
+          <p class="comment_title"><strong>${comment.title}<strong></p>
+          <p class="comment_body">${comment.title}</p>
+          <small class="comment_time">by <strong>${this.user_email}</strong></small>
+      </div>
+      `
+    )
+  })
+
+  
+}
