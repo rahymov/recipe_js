@@ -59,3 +59,9 @@ $(document).ready(function() {
 
     //$('body').tabs();
 });
+// recipe js portfolio project recipe
+
+$(() => {
+  listenForAllRecipesClick()
+});
+// chekoh for click on navbar

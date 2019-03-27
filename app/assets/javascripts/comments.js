@@ -1,4 +1,6 @@
-$(function(){
+// recipe js portfolio project comment
+
+$(() => {
   listenForCommentSubmit();
 })
 

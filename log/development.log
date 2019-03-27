@@ -4675,3 +4675,1060 @@ Processing by RecipesController#index as HTML
 Completed 200 OK in 690ms (Views: 639.9ms | ActiveRecord: 43.2ms)
 
 
+Started GET "/recipes/2" for 127.0.0.1 at 2019-03-26 22:19:03 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipe Load (33.9ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:68
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (5.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/recipes/_image_show.html.erb:2
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/_image_show.html.erb:2
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/_image_show.html.erb:7
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/_image_show.html.erb:7
+  Rendered recipes/_image_show.html.erb (308.4ms)
+  [1m[36mCategory Load (7.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "recipe_categories" ON "categories"."id" = "recipe_categories"."category_id" WHERE "recipe_categories"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/views/recipes/_recipe_info_show.html.erb:6
+  Rendered recipes/_recipe_info_show.html.erb (101.9ms)
+  [1m[36mIngredient Load (1.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/views/recipes/_ingredients_show.html.erb:8
+  Rendered recipes/_ingredients_show.html.erb (81.3ms)
+  [1m[36mDirection Load (0.9ms)[0m  [1m[34mSELECT "directions".* FROM "directions" WHERE "directions"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/views/recipes/_directions_show.html.erb:4
+  Rendered recipes/_directions_show.html.erb (36.3ms)
+  Rendered recipes/_buttons.html.erb (1.7ms)
+  [1m[35m (49.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/views/recipes/_render_comment_fields.html.erb:3
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/views/recipes/_render_comment_fields.html.erb:8
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:5
+  Rendered collection of comments/_comment.html.erb [4 times] (23.2ms)
+  Rendered comments/_form.html.erb (15.8ms)
+  Rendered recipes/_render_comment_fields.html.erb (122.9ms)
+  Rendered recipes/show.html.erb within layouts/application (686.6ms)
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/shared/_header.html.erb:20
+  Rendered shared/_header.html.erb (17.9ms)
+  Rendered shared/_flash_types.html.erb (2.0ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 17217ms (Views: 16675.5ms | ActiveRecord: 425.0ms)
+
+
+Started GET "/recipes/2" for 127.0.0.1 at 2019-03-26 22:19:21 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:68
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (5.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/recipes/_image_show.html.erb:2
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/_image_show.html.erb:2
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/_image_show.html.erb:7
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/_image_show.html.erb:7
+  Rendered recipes/_image_show.html.erb (20.1ms)
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "recipe_categories" ON "categories"."id" = "recipe_categories"."category_id" WHERE "recipe_categories"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/views/recipes/_recipe_info_show.html.erb:6
+  Rendered recipes/_recipe_info_show.html.erb (4.3ms)
+  [1m[36mIngredient Load (1.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/views/recipes/_ingredients_show.html.erb:8
+  Rendered recipes/_ingredients_show.html.erb (4.4ms)
+  [1m[36mDirection Load (0.5ms)[0m  [1m[34mSELECT "directions".* FROM "directions" WHERE "directions"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/views/recipes/_directions_show.html.erb:4
+  Rendered recipes/_directions_show.html.erb (3.1ms)
+  Rendered recipes/_buttons.html.erb (2.3ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/views/recipes/_render_comment_fields.html.erb:3
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/views/recipes/_render_comment_fields.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:5
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:5
+  Rendered collection of comments/_comment.html.erb [4 times] (13.1ms)
+  Rendered comments/_form.html.erb (2.9ms)
+  Rendered recipes/_render_comment_fields.html.erb (25.6ms)
+  Rendered recipes/show.html.erb within layouts/application (89.8ms)
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/shared/_header.html.erb:20
+  Rendered shared/_header.html.erb (9.3ms)
+  Rendered shared/_flash_types.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.8ms)
+Completed 200 OK in 269ms (Views: 243.4ms | ActiveRecord: 13.3ms)
+
+
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--757586528c3a9926b8e3548871ee47c8243af642/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTlRBd2VEVXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--61342271169e436f2a44a79bd08dab1813b3f2e4/logo-jpg.jpg" for 127.0.0.1 at 2019-03-26 22:19:22 -0400
+Processing by ActiveStorage::RepresentationsController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--757586528c3a9926b8e3548871ee47c8243af642", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTlRBd2VEVXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--61342271169e436f2a44a79bd08dab1813b3f2e4", "filename"=>"logo-jpg"}
+  [1m[36mActiveStorage::Blob Load (1.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /Users/rahymov/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.1ms) [0m[34mChecked if file exists at key: variants/XHeJFdu7mgLf44JYDFoCLDyD/abe23dc9d6ac9799668d99b3a221b55fae5e6590f55cb250f1b66517cfc14359 (yes)[0m
+[36m  Disk Storage (4.4ms) [0m[34mGenerated URL for file at key: variants/XHeJFdu7mgLf44JYDFoCLDyD/abe23dc9d6ac9799668d99b3a221b55fae5e6590f55cb250f1b66517cfc14359 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlZU0dWS1JtUjFOMjFuVEdZME5FcFpSRVp2UTB4RWVVUXZZV0psTWpOa1l6bGtObUZqT1RjNU9UWTJPR1E1T1dJellUSXlNV0kxTldaaFpUVmxOalU1TUdZMU5XTmlNalV3WmpGaU5qWTFNVGRqWm1NeE5ETTFPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjQ6MjIuNzYyWiIsInB1ciI6ImJsb2Jfa2V5In19--025a8765fc6b92b4dc613501fb934034335ff2ca/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlZU0dWS1JtUjFOMjFuVEdZME5FcFpSRVp2UTB4RWVVUXZZV0psTWpOa1l6bGtObUZqT1RjNU9UWTJPR1E1T1dJellUSXlNV0kxTldaaFpUVmxOalU1TUdZMU5XTmlNalV3WmpGaU5qWTFNVGRqWm1NeE5ETTFPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjQ6MjIuNzYyWiIsInB1ciI6ImJsb2Jfa2V5In19--025a8765fc6b92b4dc613501fb934034335ff2ca/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg
+Completed 302 Found in 95ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlZU0dWS1JtUjFOMjFuVEdZME5FcFpSRVp2UTB4RWVVUXZZV0psTWpOa1l6bGtObUZqT1RjNU9UWTJPR1E1T1dJellUSXlNV0kxTldaaFpUVmxOalU1TUdZMU5XTmlNalV3WmpGaU5qWTFNVGRqWm1NeE5ETTFPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjQ6MjIuNzYyWiIsInB1ciI6ImJsb2Jfa2V5In19--025a8765fc6b92b4dc613501fb934034335ff2ca/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg" for 127.0.0.1 at 2019-03-26 22:19:23 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"logo-jpg.jpg\"; filename*=UTF-8''logo-jpg.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlZU0dWS1JtUjFOMjFuVEdZME5FcFpSRVp2UTB4RWVVUXZZV0psTWpOa1l6bGtObUZqT1RjNU9UWTJPR1E1T1dJellUSXlNV0kxTldaaFpUVmxOalU1TUdZMU5XTmlNalV3WmpGaU5qWTFNVGRqWm1NeE5ETTFPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjQ6MjIuNzYyWiIsInB1ciI6ImJsb2Jfa2V5In19--025a8765fc6b92b4dc613501fb934034335ff2ca", "filename"=>"logo-jpg"}
+[36m  Disk Storage (4.8ms) [0m[34mDownloaded file from key: variants/XHeJFdu7mgLf44JYDFoCLDyD/abe23dc9d6ac9799668d99b3a221b55fae5e6590f55cb250f1b66517cfc14359[0m
+Completed 200 OK in 8ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/recipes/2/comments" for 127.0.0.1 at 2019-03-26 22:19:36 -0400
+Processing by CommentsController#create as */*
+  Parameters: {"authenticity_token"=>"HILt9EWUKOppjTJD3NvydcYPXVqFPCAuhGPMe/77CljTFx2uKLcbolzblwfyWjig7s9cLyqCHzfcsPpt5Mkv2A==", "comment"=>{"title"=>"test again", "body"=>"test again"}, "recipe_id"=>"2"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/rahymov/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mRecipe Load (1.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:5
+  [1m[35m (20.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:8
+  [1m[36mComment Create (66.3ms)[0m  [1m[32mINSERT INTO "comments" ("title", "body", "user_id", "created_at", "updated_at", "recipe_id") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "test again"], ["body", "test again"], ["user_id", 1], ["created_at", "2019-03-27 02:19:36.699593"], ["updated_at", "2019-03-27 02:19:36.699593"], ["recipe_id", 2]]
+  ↳ app/controllers/comments_controller.rb:8
+  [1m[35m (7.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:8
+  Rendered comments/_comment.html.erb (3.4ms)
+Completed 200 OK in 194ms (Views: 65.3ms | ActiveRecord: 96.5ms)
+
+
+Started GET "/recipes/2" for 127.0.0.1 at 2019-03-26 22:20:26 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipe Load (4.2ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:68
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (2.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/recipes/_image_show.html.erb:2
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/_image_show.html.erb:2
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/_image_show.html.erb:7
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/_image_show.html.erb:7
+  Rendered recipes/_image_show.html.erb (58.7ms)
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "recipe_categories" ON "categories"."id" = "recipe_categories"."category_id" WHERE "recipe_categories"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/views/recipes/_recipe_info_show.html.erb:6
+  Rendered recipes/_recipe_info_show.html.erb (15.2ms)
+  [1m[36mIngredient Load (0.7ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/views/recipes/_ingredients_show.html.erb:8
+  Rendered recipes/_ingredients_show.html.erb (10.3ms)
+  [1m[36mDirection Load (0.7ms)[0m  [1m[34mSELECT "directions".* FROM "directions" WHERE "directions"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/views/recipes/_directions_show.html.erb:4
+  Rendered recipes/_directions_show.html.erb (12.7ms)
+  Rendered recipes/_buttons.html.erb (5.8ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/views/recipes/_render_comment_fields.html.erb:3
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/views/recipes/_render_comment_fields.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:5
+  Rendered collection of comments/_comment.html.erb [5 times] (34.4ms)
+  Rendered comments/_form.html.erb (9.1ms)
+  Rendered recipes/_render_comment_fields.html.erb (77.6ms)
+  Rendered recipes/show.html.erb within layouts/application (223.8ms)
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/shared/_header.html.erb:20
+  Rendered shared/_header.html.erb (10.8ms)
+  Rendered shared/_flash_types.html.erb (3.2ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 924ms (Views: 833.1ms | ActiveRecord: 16.7ms)
+
+
+Started GET "/recipes/2" for 127.0.0.1 at 2019-03-26 22:20:39 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipe Load (1.3ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:68
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (1.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/recipes/_image_show.html.erb:2
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/_image_show.html.erb:2
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/_image_show.html.erb:7
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/_image_show.html.erb:7
+  Rendered recipes/_image_show.html.erb (30.4ms)
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "recipe_categories" ON "categories"."id" = "recipe_categories"."category_id" WHERE "recipe_categories"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/views/recipes/_recipe_info_show.html.erb:6
+  Rendered recipes/_recipe_info_show.html.erb (8.5ms)
+  [1m[36mIngredient Load (0.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/views/recipes/_ingredients_show.html.erb:8
+  Rendered recipes/_ingredients_show.html.erb (4.9ms)
+  [1m[36mDirection Load (0.5ms)[0m  [1m[34mSELECT "directions".* FROM "directions" WHERE "directions"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/views/recipes/_directions_show.html.erb:4
+  Rendered recipes/_directions_show.html.erb (4.9ms)
+  Rendered recipes/_buttons.html.erb (2.3ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/views/recipes/_render_comment_fields.html.erb:3
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/views/recipes/_render_comment_fields.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:5
+  Rendered collection of comments/_comment.html.erb [5 times] (30.1ms)
+  Rendered comments/_form.html.erb (8.0ms)
+  Rendered recipes/_render_comment_fields.html.erb (53.7ms)
+  Rendered recipes/show.html.erb within layouts/application (124.6ms)
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/shared/_header.html.erb:20
+  Rendered shared/_header.html.erb (10.1ms)
+  Rendered shared/_flash_types.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+Completed 200 OK in 418ms (Views: 388.8ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlZU0dWS1JtUjFOMjFuVEdZME5FcFpSRVp2UTB4RWVVUXZZV0psTWpOa1l6bGtObUZqT1RjNU9UWTJPR1E1T1dJellUSXlNV0kxTldaaFpUVmxOalU1TUdZMU5XTmlNalV3WmpGaU5qWTFNVGRqWm1NeE5ETTFPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjQ6MjIuNzYyWiIsInB1ciI6ImJsb2Jfa2V5In19--025a8765fc6b92b4dc613501fb934034335ff2ca/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg" for 127.0.0.1 at 2019-03-26 22:20:40 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"logo-jpg.jpg\"; filename*=UTF-8''logo-jpg.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlZU0dWS1JtUjFOMjFuVEdZME5FcFpSRVp2UTB4RWVVUXZZV0psTWpOa1l6bGtObUZqT1RjNU9UWTJPR1E1T1dJellUSXlNV0kxTldaaFpUVmxOalU1TUdZMU5XTmlNalV3WmpGaU5qWTFNVGRqWm1NeE5ETTFPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjQ6MjIuNzYyWiIsInB1ciI6ImJsb2Jfa2V5In19--025a8765fc6b92b4dc613501fb934034335ff2ca", "filename"=>"logo-jpg"}
+[36m  Disk Storage (3.7ms) [0m[34mDownloaded file from key: variants/XHeJFdu7mgLf44JYDFoCLDyD/abe23dc9d6ac9799668d99b3a221b55fae5e6590f55cb250f1b66517cfc14359[0m
+Completed 200 OK in 8ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-26 22:20:51 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (2.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY created_at desc[0m
+  ↳ app/views/recipes/_recipes.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  Rendered recipes/_recipes.html.erb (27.9ms)
+  Rendered recipes/index.html.erb within layouts/application (31.6ms)
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/shared/_header.html.erb:20
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_header.html.erb:37
+  Rendered shared/_header.html.erb (17.7ms)
+  Rendered shared/_flash_types.html.erb (1.1ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 303ms (Views: 291.6ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlZU0dWS1JtUjFOMjFuVEdZME5FcFpSRVp2UTB4RWVVUXZZV0psTWpOa1l6bGtObUZqT1RjNU9UWTJPR1E1T1dJellUSXlNV0kxTldaaFpUVmxOalU1TUdZMU5XTmlNalV3WmpGaU5qWTFNVGRqWm1NeE5ETTFPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjQ6MjIuNzYyWiIsInB1ciI6ImJsb2Jfa2V5In19--025a8765fc6b92b4dc613501fb934034335ff2ca/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg" for 127.0.0.1 at 2019-03-26 22:20:52 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"logo-jpg.jpg\"; filename*=UTF-8''logo-jpg.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlZU0dWS1JtUjFOMjFuVEdZME5FcFpSRVp2UTB4RWVVUXZZV0psTWpOa1l6bGtObUZqT1RjNU9UWTJPR1E1T1dJellUSXlNV0kxTldaaFpUVmxOalU1TUdZMU5XTmlNalV3WmpGaU5qWTFNVGRqWm1NeE5ETTFPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjQ6MjIuNzYyWiIsInB1ciI6ImJsb2Jfa2V5In19--025a8765fc6b92b4dc613501fb934034335ff2ca", "filename"=>"logo-jpg"}
+[36m  Disk Storage (6.8ms) [0m[34mDownloaded file from key: variants/XHeJFdu7mgLf44JYDFoCLDyD/abe23dc9d6ac9799668d99b3a221b55fae5e6590f55cb250f1b66517cfc14359[0m
+Completed 200 OK in 10ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--400146e8958b4b90f7f98cf2fa3e1f04fc6df752/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTXpBd2VETXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--b815e16ee9d1d2d9205841d7b3f946b9f7b33835/logo-jpg.jpg" for 127.0.0.1 at 2019-03-26 22:20:52 -0400
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--757586528c3a9926b8e3548871ee47c8243af642/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTXpBd2VETXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--b815e16ee9d1d2d9205841d7b3f946b9f7b33835/logo-jpg.jpg" for 127.0.0.1 at 2019-03-26 22:20:52 -0400
+Processing by ActiveStorage::RepresentationsController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--400146e8958b4b90f7f98cf2fa3e1f04fc6df752", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTXpBd2VETXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--b815e16ee9d1d2d9205841d7b3f946b9f7b33835", "filename"=>"logo-jpg"}
+  [1m[36mActiveStorage::Blob Load (3.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/rahymov/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.7ms) [0m[34mChecked if file exists at key: variants/cQZ7fDpq7qXVDRKdYXqeYK1i/9e950b79e048422dca264816fec4b3cb16661070be759d0564d649edf8091a29 (yes)[0m
+[36m  Disk Storage (1.7ms) [0m[34mGenerated URL for file at key: variants/cQZ7fDpq7qXVDRKdYXqeYK1i/9e950b79e048422dca264816fec4b3cb16661070be759d0564d649edf8091a29 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlqVVZvM1prUndjVGR4V0ZaRVVrdGtXVmh4WlZsTE1Xa3ZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjU6NTIuODgxWiIsInB1ciI6ImJsb2Jfa2V5In19--3cea523ab04fef536a309d23d574a702b56d67a7/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlqVVZvM1prUndjVGR4V0ZaRVVrdGtXVmh4WlZsTE1Xa3ZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjU6NTIuODgxWiIsInB1ciI6ImJsb2Jfa2V5In19--3cea523ab04fef536a309d23d574a702b56d67a7/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg
+Completed 302 Found in 14ms (ActiveRecord: 3.4ms)
+
+
+Processing by ActiveStorage::RepresentationsController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--757586528c3a9926b8e3548871ee47c8243af642", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTXpBd2VETXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--b815e16ee9d1d2d9205841d7b3f946b9f7b33835", "filename"=>"logo-jpg"}
+  [1m[36mActiveStorage::Blob Load (10.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /Users/rahymov/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.1ms) [0m[34mChecked if file exists at key: variants/XHeJFdu7mgLf44JYDFoCLDyD/9e950b79e048422dca264816fec4b3cb16661070be759d0564d649edf8091a29 (yes)[0m
+[36m  Disk Storage (1.0ms) [0m[34mGenerated URL for file at key: variants/XHeJFdu7mgLf44JYDFoCLDyD/9e950b79e048422dca264816fec4b3cb16661070be759d0564d649edf8091a29 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlZU0dWS1JtUjFOMjFuVEdZME5FcFpSRVp2UTB4RWVVUXZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjU6NTIuOTE4WiIsInB1ciI6ImJsb2Jfa2V5In19--e175c657adb643f02ba9c47bef5fffe3cc8159f2/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlZU0dWS1JtUjFOMjFuVEdZME5FcFpSRVp2UTB4RWVVUXZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjU6NTIuOTE4WiIsInB1ciI6ImJsb2Jfa2V5In19--e175c657adb643f02ba9c47bef5fffe3cc8159f2/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg
+Completed 302 Found in 24ms (ActiveRecord: 10.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-26 22:21:05 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (16.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY created_at desc[0m
+  ↳ app/views/recipes/_recipes.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (5.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Blob Load (7.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Attachment Load (10.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  Rendered recipes/_recipes.html.erb (132.1ms)
+  Rendered recipes/index.html.erb within layouts/application (150.6ms)
+  [1m[36mCategory Load (2.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/shared/_header.html.erb:20
+  [1m[36mUser Load (9.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_header.html.erb:37
+  Rendered shared/_header.html.erb (46.7ms)
+  Rendered shared/_flash_types.html.erb (1.4ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 978ms (Views: 901.9ms | ActiveRecord: 52.6ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlqVVZvM1prUndjVGR4V0ZaRVVrdGtXVmh4WlZsTE1Xa3ZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjU6NTIuODgxWiIsInB1ciI6ImJsb2Jfa2V5In19--3cea523ab04fef536a309d23d574a702b56d67a7/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg" for 127.0.0.1 at 2019-03-26 22:21:08 -0400
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlZU0dWS1JtUjFOMjFuVEdZME5FcFpSRVp2UTB4RWVVUXZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjU6NTIuOTE4WiIsInB1ciI6ImJsb2Jfa2V5In19--e175c657adb643f02ba9c47bef5fffe3cc8159f2/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg" for 127.0.0.1 at 2019-03-26 22:21:08 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"logo-jpg.jpg\"; filename*=UTF-8''logo-jpg.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlqVVZvM1prUndjVGR4V0ZaRVVrdGtXVmh4WlZsTE1Xa3ZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjU6NTIuODgxWiIsInB1ciI6ImJsb2Jfa2V5In19--3cea523ab04fef536a309d23d574a702b56d67a7", "filename"=>"logo-jpg"}
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"logo-jpg.jpg\"; filename*=UTF-8''logo-jpg.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlZU0dWS1JtUjFOMjFuVEdZME5FcFpSRVp2UTB4RWVVUXZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjU6NTIuOTE4WiIsInB1ciI6ImJsb2Jfa2V5In19--e175c657adb643f02ba9c47bef5fffe3cc8159f2", "filename"=>"logo-jpg"}
+[36m  Disk Storage (7.4ms) [0m[34mDownloaded file from key: variants/cQZ7fDpq7qXVDRKdYXqeYK1i/9e950b79e048422dca264816fec4b3cb16661070be759d0564d649edf8091a29[0m
+Completed 200 OK in 18ms (ActiveRecord: 0.0ms)
+
+
+[36m  Disk Storage (12.0ms) [0m[34mDownloaded file from key: variants/XHeJFdu7mgLf44JYDFoCLDyD/9e950b79e048422dca264816fec4b3cb16661070be759d0564d649edf8091a29[0m
+Completed 200 OK in 15ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-26 22:21:08 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (9.1ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY created_at desc[0m
+  ↳ app/views/recipes/_recipes.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (2.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Blob Load (3.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Attachment Load (2.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Blob Load (6.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  Rendered recipes/_recipes.html.erb (101.3ms)
+  Rendered recipes/index.html.erb within layouts/application (106.4ms)
+  [1m[36mCategory Load (22.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/shared/_header.html.erb:20
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_header.html.erb:37
+  Rendered shared/_header.html.erb (46.4ms)
+  Rendered shared/_flash_types.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.9ms)
+Completed 200 OK in 801ms (Views: 750.9ms | ActiveRecord: 47.8ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlZU0dWS1JtUjFOMjFuVEdZME5FcFpSRVp2UTB4RWVVUXZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjU6NTIuOTE4WiIsInB1ciI6ImJsb2Jfa2V5In19--e175c657adb643f02ba9c47bef5fffe3cc8159f2/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg" for 127.0.0.1 at 2019-03-26 22:21:09 -0400
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlqVVZvM1prUndjVGR4V0ZaRVVrdGtXVmh4WlZsTE1Xa3ZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjU6NTIuODgxWiIsInB1ciI6ImJsb2Jfa2V5In19--3cea523ab04fef536a309d23d574a702b56d67a7/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg" for 127.0.0.1 at 2019-03-26 22:21:09 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"logo-jpg.jpg\"; filename*=UTF-8''logo-jpg.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlZU0dWS1JtUjFOMjFuVEdZME5FcFpSRVp2UTB4RWVVUXZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjU6NTIuOTE4WiIsInB1ciI6ImJsb2Jfa2V5In19--e175c657adb643f02ba9c47bef5fffe3cc8159f2", "filename"=>"logo-jpg"}
+[36m  Disk Storage (2.1ms) [0m[34mDownloaded file from key: variants/XHeJFdu7mgLf44JYDFoCLDyD/9e950b79e048422dca264816fec4b3cb16661070be759d0564d649edf8091a29[0m
+Completed 200 OK in 4ms (ActiveRecord: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"logo-jpg.jpg\"; filename*=UTF-8''logo-jpg.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlqVVZvM1prUndjVGR4V0ZaRVVrdGtXVmh4WlZsTE1Xa3ZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjU6NTIuODgxWiIsInB1ciI6ImJsb2Jfa2V5In19--3cea523ab04fef536a309d23d574a702b56d67a7", "filename"=>"logo-jpg"}
+[36m  Disk Storage (1.3ms) [0m[34mDownloaded file from key: variants/cQZ7fDpq7qXVDRKdYXqeYK1i/9e950b79e048422dca264816fec4b3cb16661070be759d0564d649edf8091a29[0m
+Completed 200 OK in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-26 22:21:50 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY created_at desc[0m
+  ↳ app/views/recipes/_recipes.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (1.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Blob Load (2.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  Rendered recipes/_recipes.html.erb (128.6ms)
+  Rendered recipes/index.html.erb within layouts/application (142.6ms)
+  [1m[36mCategory Load (4.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/shared/_header.html.erb:20
+  [1m[36mUser Load (33.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_header.html.erb:37
+  Rendered shared/_header.html.erb (91.5ms)
+  Rendered shared/_flash_types.html.erb (1.4ms)
+  Rendered shared/_footer.html.erb (1.0ms)
+Completed 200 OK in 1770ms (Views: 1675.5ms | ActiveRecord: 46.5ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlZU0dWS1JtUjFOMjFuVEdZME5FcFpSRVp2UTB4RWVVUXZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjU6NTIuOTE4WiIsInB1ciI6ImJsb2Jfa2V5In19--e175c657adb643f02ba9c47bef5fffe3cc8159f2/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg" for 127.0.0.1 at 2019-03-26 22:21:53 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"logo-jpg.jpg\"; filename*=UTF-8''logo-jpg.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlZU0dWS1JtUjFOMjFuVEdZME5FcFpSRVp2UTB4RWVVUXZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjU6NTIuOTE4WiIsInB1ciI6ImJsb2Jfa2V5In19--e175c657adb643f02ba9c47bef5fffe3cc8159f2", "filename"=>"logo-jpg"}
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlqVVZvM1prUndjVGR4V0ZaRVVrdGtXVmh4WlZsTE1Xa3ZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjU6NTIuODgxWiIsInB1ciI6ImJsb2Jfa2V5In19--3cea523ab04fef536a309d23d574a702b56d67a7/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg" for 127.0.0.1 at 2019-03-26 22:21:53 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"logo-jpg.jpg\"; filename*=UTF-8''logo-jpg.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlqVVZvM1prUndjVGR4V0ZaRVVrdGtXVmh4WlZsTE1Xa3ZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjU6NTIuODgxWiIsInB1ciI6ImJsb2Jfa2V5In19--3cea523ab04fef536a309d23d574a702b56d67a7", "filename"=>"logo-jpg"}
+[36m  Disk Storage (10.4ms) [0m[34mDownloaded file from key: variants/XHeJFdu7mgLf44JYDFoCLDyD/9e950b79e048422dca264816fec4b3cb16661070be759d0564d649edf8091a29[0m
+Completed 200 OK in 16ms (ActiveRecord: 0.0ms)
+
+
+[36m  Disk Storage (12.3ms) [0m[34mDownloaded file from key: variants/cQZ7fDpq7qXVDRKdYXqeYK1i/9e950b79e048422dca264816fec4b3cb16661070be759d0564d649edf8091a29[0m
+Completed 200 OK in 16ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-26 22:22:44 -0400
+  [1m[35m (5.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rahymov/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (2.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY created_at desc[0m
+  ↳ app/views/recipes/_recipes.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (2.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  Rendered recipes/_recipes.html.erb (252.4ms)
+  Rendered recipes/index.html.erb within layouts/application (261.2ms)
+Started GET "/" for 127.0.0.1 at 2019-03-26 22:22:46 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (3.5ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY created_at desc[0m
+  ↳ app/views/recipes/_recipes.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (4.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Blob Load (1.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Attachment Load (5.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  Rendered recipes/_recipes.html.erb (33.8ms)
+  Rendered recipes/index.html.erb within layouts/application (37.9ms)
+  [1m[36mCategory Load (1.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/shared/_header.html.erb:20
+  [1m[36mCategory Load (3.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/shared/_header.html.erb:20
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_header.html.erb:37
+  ↳ app/views/shared/_header.html.erb:37
+  Rendered shared/_header.html.erb (125.2ms)
+  Rendered shared/_header.html.erb (173.8ms)
+  Rendered shared/_flash_types.html.erb (1.3ms)
+  Rendered shared/_flash_types.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 2569ms (Views: 2423.9ms | ActiveRecord: 82.1ms)
+
+
+  Rendered shared/_footer.html.erb (1.0ms)
+Completed 200 OK in 1372ms (Views: 1295.9ms | ActiveRecord: 73.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-26 22:22:47 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (0.9ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY created_at desc[0m
+  ↳ app/views/recipes/_recipes.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (14.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Attachment Load (16.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  Rendered recipes/_recipes.html.erb (61.1ms)
+  Rendered recipes/index.html.erb within layouts/application (66.5ms)
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/shared/_header.html.erb:20
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_header.html.erb:37
+  Rendered shared/_header.html.erb (16.3ms)
+  Rendered shared/_flash_types.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 467ms (Views: 429.1ms | ActiveRecord: 35.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-26 22:23:11 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.6ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY created_at desc[0m
+  ↳ app/views/recipes/_recipes.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (4.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Blob Load (4.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  Rendered recipes/_recipes.html.erb (45.9ms)
+  Rendered recipes/index.html.erb within layouts/application (50.0ms)
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/shared/_header.html.erb:20
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_header.html.erb:37
+  Rendered shared/_header.html.erb (32.6ms)
+  Rendered shared/_flash_types.html.erb (0.9ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 833ms (Views: 813.7ms | ActiveRecord: 14.8ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlZU0dWS1JtUjFOMjFuVEdZME5FcFpSRVp2UTB4RWVVUXZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjU6NTIuOTE4WiIsInB1ciI6ImJsb2Jfa2V5In19--e175c657adb643f02ba9c47bef5fffe3cc8159f2/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg" for 127.0.0.1 at 2019-03-26 22:23:13 -0400
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlqVVZvM1prUndjVGR4V0ZaRVVrdGtXVmh4WlZsTE1Xa3ZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjU6NTIuODgxWiIsInB1ciI6ImJsb2Jfa2V5In19--3cea523ab04fef536a309d23d574a702b56d67a7/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg" for 127.0.0.1 at 2019-03-26 22:23:13 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"logo-jpg.jpg\"; filename*=UTF-8''logo-jpg.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlZU0dWS1JtUjFOMjFuVEdZME5FcFpSRVp2UTB4RWVVUXZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjU6NTIuOTE4WiIsInB1ciI6ImJsb2Jfa2V5In19--e175c657adb643f02ba9c47bef5fffe3cc8159f2", "filename"=>"logo-jpg"}
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"logo-jpg.jpg\"; filename*=UTF-8''logo-jpg.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlqVVZvM1prUndjVGR4V0ZaRVVrdGtXVmh4WlZsTE1Xa3ZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjU6NTIuODgxWiIsInB1ciI6ImJsb2Jfa2V5In19--3cea523ab04fef536a309d23d574a702b56d67a7", "filename"=>"logo-jpg"}
+[36m  Disk Storage (12.6ms) [0m[34mDownloaded file from key: variants/XHeJFdu7mgLf44JYDFoCLDyD/9e950b79e048422dca264816fec4b3cb16661070be759d0564d649edf8091a29[0m
+Completed 200 OK in 20ms (ActiveRecord: 0.0ms)
+
+
+[36m  Disk Storage (18.3ms) [0m[34mDownloaded file from key: variants/cQZ7fDpq7qXVDRKdYXqeYK1i/9e950b79e048422dca264816fec4b3cb16661070be759d0564d649edf8091a29[0m
+Completed 200 OK in 23ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-26 22:23:13 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (2.8ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY created_at desc[0m
+  ↳ app/views/recipes/_recipes.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (2.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Blob Load (39.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Attachment Load (2.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Blob Load (1.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  Rendered recipes/_recipes.html.erb (76.5ms)
+  Rendered recipes/index.html.erb within layouts/application (80.1ms)
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/shared/_header.html.erb:20
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_header.html.erb:37
+  Rendered shared/_header.html.erb (15.2ms)
+  Rendered shared/_flash_types.html.erb (1.4ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 653ms (Views: 599.3ms | ActiveRecord: 51.5ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlZU0dWS1JtUjFOMjFuVEdZME5FcFpSRVp2UTB4RWVVUXZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjU6NTIuOTE4WiIsInB1ciI6ImJsb2Jfa2V5In19--e175c657adb643f02ba9c47bef5fffe3cc8159f2/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg" for 127.0.0.1 at 2019-03-26 22:23:15 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"logo-jpg.jpg\"; filename*=UTF-8''logo-jpg.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlZU0dWS1JtUjFOMjFuVEdZME5FcFpSRVp2UTB4RWVVUXZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjU6NTIuOTE4WiIsInB1ciI6ImJsb2Jfa2V5In19--e175c657adb643f02ba9c47bef5fffe3cc8159f2", "filename"=>"logo-jpg"}
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlqVVZvM1prUndjVGR4V0ZaRVVrdGtXVmh4WlZsTE1Xa3ZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjU6NTIuODgxWiIsInB1ciI6ImJsb2Jfa2V5In19--3cea523ab04fef536a309d23d574a702b56d67a7/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg" for 127.0.0.1 at 2019-03-26 22:23:15 -0400
+[36m  Disk Storage (1.8ms) [0m[34mDownloaded file from key: variants/XHeJFdu7mgLf44JYDFoCLDyD/9e950b79e048422dca264816fec4b3cb16661070be759d0564d649edf8091a29[0m
+Completed 200 OK in 5ms (ActiveRecord: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"logo-jpg.jpg\"; filename*=UTF-8''logo-jpg.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlqVVZvM1prUndjVGR4V0ZaRVVrdGtXVmh4WlZsTE1Xa3ZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjU6NTIuODgxWiIsInB1ciI6ImJsb2Jfa2V5In19--3cea523ab04fef536a309d23d574a702b56d67a7", "filename"=>"logo-jpg"}
+[36m  Disk Storage (1.3ms) [0m[34mDownloaded file from key: variants/cQZ7fDpq7qXVDRKdYXqeYK1i/9e950b79e048422dca264816fec4b3cb16661070be759d0564d649edf8091a29[0m
+Completed 200 OK in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-26 22:24:15 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.4ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY created_at desc[0m
+  ↳ app/views/recipes/_recipes.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  Rendered recipes/_recipes.html.erb (37.7ms)
+  Rendered recipes/index.html.erb within layouts/application (43.5ms)
+  [1m[36mCategory Load (128.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/shared/_header.html.erb:20
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_header.html.erb:37
+  Rendered shared/_header.html.erb (184.9ms)
+  Rendered shared/_flash_types.html.erb (1.4ms)
+  Rendered shared/_footer.html.erb (1.2ms)
+Completed 200 OK in 469ms (Views: 312.5ms | ActiveRecord: 139.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-26 22:25:22 -0400
+  [1m[35m (6.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/rahymov/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY created_at desc[0m
+  ↳ app/views/recipes/_recipes.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (1.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  Rendered recipes/_recipes.html.erb (154.9ms)
+  Rendered recipes/index.html.erb within layouts/application (160.1ms)
+  [1m[36mCategory Load (1.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/shared/_header.html.erb:20
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_header.html.erb:37
+  Rendered shared/_header.html.erb (139.7ms)
+  Rendered shared/_flash_types.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+Completed 200 OK in 1598ms (Views: 1497.5ms | ActiveRecord: 62.9ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlZU0dWS1JtUjFOMjFuVEdZME5FcFpSRVp2UTB4RWVVUXZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjU6NTIuOTE4WiIsInB1ciI6ImJsb2Jfa2V5In19--e175c657adb643f02ba9c47bef5fffe3cc8159f2/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg" for 127.0.0.1 at 2019-03-26 22:25:24 -0400
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlqVVZvM1prUndjVGR4V0ZaRVVrdGtXVmh4WlZsTE1Xa3ZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjU6NTIuODgxWiIsInB1ciI6ImJsb2Jfa2V5In19--3cea523ab04fef536a309d23d574a702b56d67a7/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg" for 127.0.0.1 at 2019-03-26 22:25:24 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"logo-jpg.jpg\"; filename*=UTF-8''logo-jpg.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlZU0dWS1JtUjFOMjFuVEdZME5FcFpSRVp2UTB4RWVVUXZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjU6NTIuOTE4WiIsInB1ciI6ImJsb2Jfa2V5In19--e175c657adb643f02ba9c47bef5fffe3cc8159f2", "filename"=>"logo-jpg"}
+[36m  Disk Storage (7.9ms) [0m[34mDownloaded file from key: variants/XHeJFdu7mgLf44JYDFoCLDyD/9e950b79e048422dca264816fec4b3cb16661070be759d0564d649edf8091a29[0m
+Completed 200 OK in 15ms (ActiveRecord: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"logo-jpg.jpg\"; filename*=UTF-8''logo-jpg.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlqVVZvM1prUndjVGR4V0ZaRVVrdGtXVmh4WlZsTE1Xa3ZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjU6NTIuODgxWiIsInB1ciI6ImJsb2Jfa2V5In19--3cea523ab04fef536a309d23d574a702b56d67a7", "filename"=>"logo-jpg"}
+[36m  Disk Storage (7.1ms) [0m[34mDownloaded file from key: variants/cQZ7fDpq7qXVDRKdYXqeYK1i/9e950b79e048422dca264816fec4b3cb16661070be759d0564d649edf8091a29[0m
+Completed 200 OK in 10ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-26 22:25:30 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY created_at desc[0m
+  ↳ app/views/recipes/_recipes.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (1.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Blob Load (1.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  Rendered recipes/_recipes.html.erb (25.0ms)
+  Rendered recipes/index.html.erb within layouts/application (33.4ms)
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/shared/_header.html.erb:20
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_header.html.erb:37
+  Rendered shared/_header.html.erb (19.5ms)
+  Rendered shared/_flash_types.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 246ms (Views: 230.2ms | ActiveRecord: 12.4ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlZU0dWS1JtUjFOMjFuVEdZME5FcFpSRVp2UTB4RWVVUXZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjU6NTIuOTE4WiIsInB1ciI6ImJsb2Jfa2V5In19--e175c657adb643f02ba9c47bef5fffe3cc8159f2/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg" for 127.0.0.1 at 2019-03-26 22:25:31 -0400
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlqVVZvM1prUndjVGR4V0ZaRVVrdGtXVmh4WlZsTE1Xa3ZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjU6NTIuODgxWiIsInB1ciI6ImJsb2Jfa2V5In19--3cea523ab04fef536a309d23d574a702b56d67a7/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg" for 127.0.0.1 at 2019-03-26 22:25:31 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"logo-jpg.jpg\"; filename*=UTF-8''logo-jpg.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlZU0dWS1JtUjFOMjFuVEdZME5FcFpSRVp2UTB4RWVVUXZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjU6NTIuOTE4WiIsInB1ciI6ImJsb2Jfa2V5In19--e175c657adb643f02ba9c47bef5fffe3cc8159f2", "filename"=>"logo-jpg"}
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"logo-jpg.jpg\"; filename*=UTF-8''logo-jpg.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlqVVZvM1prUndjVGR4V0ZaRVVrdGtXVmh4WlZsTE1Xa3ZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjU6NTIuODgxWiIsInB1ciI6ImJsb2Jfa2V5In19--3cea523ab04fef536a309d23d574a702b56d67a7", "filename"=>"logo-jpg"}
+[36m  Disk Storage (4.1ms) [0m[34mDownloaded file from key: variants/XHeJFdu7mgLf44JYDFoCLDyD/9e950b79e048422dca264816fec4b3cb16661070be759d0564d649edf8091a29[0m
+Completed 200 OK in 7ms (ActiveRecord: 0.0ms)
+
+
+[36m  Disk Storage (6.5ms) [0m[34mDownloaded file from key: variants/cQZ7fDpq7qXVDRKdYXqeYK1i/9e950b79e048422dca264816fec4b3cb16661070be759d0564d649edf8091a29[0m
+Completed 200 OK in 9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlZU0dWS1JtUjFOMjFuVEdZME5FcFpSRVp2UTB4RWVVUXZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjU6NTIuOTE4WiIsInB1ciI6ImJsb2Jfa2V5In19--e175c657adb643f02ba9c47bef5fffe3cc8159f2/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg" for 127.0.0.1 at 2019-03-26 22:25:32 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"logo-jpg.jpg\"; filename*=UTF-8''logo-jpg.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlZU0dWS1JtUjFOMjFuVEdZME5FcFpSRVp2UTB4RWVVUXZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjU6NTIuOTE4WiIsInB1ciI6ImJsb2Jfa2V5In19--e175c657adb643f02ba9c47bef5fffe3cc8159f2", "filename"=>"logo-jpg"}
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlqVVZvM1prUndjVGR4V0ZaRVVrdGtXVmh4WlZsTE1Xa3ZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjU6NTIuODgxWiIsInB1ciI6ImJsb2Jfa2V5In19--3cea523ab04fef536a309d23d574a702b56d67a7/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg" for 127.0.0.1 at 2019-03-26 22:25:32 -0400
+[36m  Disk Storage (1.9ms) [0m[34mDownloaded file from key: variants/XHeJFdu7mgLf44JYDFoCLDyD/9e950b79e048422dca264816fec4b3cb16661070be759d0564d649edf8091a29[0m
+Completed 200 OK in 4ms (ActiveRecord: 0.0ms)
+
+
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"logo-jpg.jpg\"; filename*=UTF-8''logo-jpg.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlqVVZvM1prUndjVGR4V0ZaRVVrdGtXVmh4WlZsTE1Xa3ZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MjU6NTIuODgxWiIsInB1ciI6ImJsb2Jfa2V5In19--3cea523ab04fef536a309d23d574a702b56d67a7", "filename"=>"logo-jpg"}
+[36m  Disk Storage (6.1ms) [0m[34mDownloaded file from key: variants/cQZ7fDpq7qXVDRKdYXqeYK1i/9e950b79e048422dca264816fec4b3cb16661070be759d0564d649edf8091a29[0m
+Completed 200 OK in 8ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-26 22:25:37 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY created_at desc[0m
+  ↳ app/views/recipes/_recipes.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (2.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Blob Load (4.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Attachment Load (1.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  Rendered recipes/_recipes.html.erb (35.0ms)
+  Rendered recipes/index.html.erb within layouts/application (40.8ms)
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/shared/_header.html.erb:20
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_header.html.erb:37
+  Rendered shared/_header.html.erb (13.2ms)
+  Rendered shared/_flash_types.html.erb (1.1ms)
+  Rendered shared/_footer.html.erb (1.1ms)
+Completed 200 OK in 222ms (Views: 207.6ms | ActiveRecord: 11.7ms)
+
+
+Started GET "/recipes/2" for 127.0.0.1 at 2019-03-26 22:25:39 -0400
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipe Load (0.8ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:68
+  Rendering recipes/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/recipes/_image_show.html.erb:2
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/_image_show.html.erb:2
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/_image_show.html.erb:7
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/_image_show.html.erb:7
+  Rendered recipes/_image_show.html.erb (15.7ms)
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "recipe_categories" ON "categories"."id" = "recipe_categories"."category_id" WHERE "recipe_categories"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/views/recipes/_recipe_info_show.html.erb:6
+  Rendered recipes/_recipe_info_show.html.erb (47.8ms)
+  [1m[36mIngredient Load (0.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/views/recipes/_ingredients_show.html.erb:8
+  Rendered recipes/_ingredients_show.html.erb (23.4ms)
+  [1m[36mDirection Load (1.0ms)[0m  [1m[34mSELECT "directions".* FROM "directions" WHERE "directions"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/views/recipes/_directions_show.html.erb:4
+  Rendered recipes/_directions_show.html.erb (57.9ms)
+  Rendered recipes/_buttons.html.erb (2.3ms)
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/views/recipes/_render_comment_fields.html.erb:3
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 2]]
+  ↳ app/views/recipes/_render_comment_fields.html.erb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:5
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:5
+  Rendered collection of comments/_comment.html.erb [5 times] (111.9ms)
+  Rendered comments/_form.html.erb (23.5ms)
+  Rendered recipes/_render_comment_fields.html.erb (154.9ms)
+  Rendered recipes/show.html.erb within layouts/application (325.5ms)
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/shared/_header.html.erb:20
+  Rendered shared/_header.html.erb (10.9ms)
+  Rendered shared/_flash_types.html.erb (0.9ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+Completed 200 OK in 683ms (Views: 474.4ms | ActiveRecord: 166.5ms)
+
+
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--757586528c3a9926b8e3548871ee47c8243af642/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTlRBd2VEVXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--61342271169e436f2a44a79bd08dab1813b3f2e4/logo-jpg.jpg" for 127.0.0.1 at 2019-03-26 22:25:39 -0400
+Processing by ActiveStorage::RepresentationsController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--757586528c3a9926b8e3548871ee47c8243af642", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTlRBd2VEVXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--61342271169e436f2a44a79bd08dab1813b3f2e4", "filename"=>"logo-jpg"}
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /Users/rahymov/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.1ms) [0m[34mChecked if file exists at key: variants/XHeJFdu7mgLf44JYDFoCLDyD/abe23dc9d6ac9799668d99b3a221b55fae5e6590f55cb250f1b66517cfc14359 (yes)[0m
+[36m  Disk Storage (1.8ms) [0m[34mGenerated URL for file at key: variants/XHeJFdu7mgLf44JYDFoCLDyD/abe23dc9d6ac9799668d99b3a221b55fae5e6590f55cb250f1b66517cfc14359 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlZU0dWS1JtUjFOMjFuVEdZME5FcFpSRVp2UTB4RWVVUXZZV0psTWpOa1l6bGtObUZqT1RjNU9UWTJPR1E1T1dJellUSXlNV0kxTldaaFpUVmxOalU1TUdZMU5XTmlNalV3WmpGaU5qWTFNVGRqWm1NeE5ETTFPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MzA6MzkuOTk2WiIsInB1ciI6ImJsb2Jfa2V5In19--2236884b053650ca235068090096923fd72f691d/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlZU0dWS1JtUjFOMjFuVEdZME5FcFpSRVp2UTB4RWVVUXZZV0psTWpOa1l6bGtObUZqT1RjNU9UWTJPR1E1T1dJellUSXlNV0kxTldaaFpUVmxOalU1TUdZMU5XTmlNalV3WmpGaU5qWTFNVGRqWm1NeE5ETTFPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MzA6MzkuOTk2WiIsInB1ciI6ImJsb2Jfa2V5In19--2236884b053650ca235068090096923fd72f691d/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg
+Completed 302 Found in 9ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlZU0dWS1JtUjFOMjFuVEdZME5FcFpSRVp2UTB4RWVVUXZZV0psTWpOa1l6bGtObUZqT1RjNU9UWTJPR1E1T1dJellUSXlNV0kxTldaaFpUVmxOalU1TUdZMU5XTmlNalV3WmpGaU5qWTFNVGRqWm1NeE5ETTFPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MzA6MzkuOTk2WiIsInB1ciI6ImJsb2Jfa2V5In19--2236884b053650ca235068090096923fd72f691d/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg" for 127.0.0.1 at 2019-03-26 22:25:40 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"logo-jpg.jpg\"; filename*=UTF-8''logo-jpg.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlZU0dWS1JtUjFOMjFuVEdZME5FcFpSRVp2UTB4RWVVUXZZV0psTWpOa1l6bGtObUZqT1RjNU9UWTJPR1E1T1dJellUSXlNV0kxTldaaFpUVmxOalU1TUdZMU5XTmlNalV3WmpGaU5qWTFNVGRqWm1NeE5ETTFPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MzA6MzkuOTk2WiIsInB1ciI6ImJsb2Jfa2V5In19--2236884b053650ca235068090096923fd72f691d", "filename"=>"logo-jpg"}
+[36m  Disk Storage (7.4ms) [0m[34mDownloaded file from key: variants/XHeJFdu7mgLf44JYDFoCLDyD/abe23dc9d6ac9799668d99b3a221b55fae5e6590f55cb250f1b66517cfc14359[0m
+Completed 200 OK in 9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-26 22:27:34 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (3.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY created_at desc[0m
+  ↳ app/views/recipes/_recipes.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (2.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Attachment Load (1.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  Rendered recipes/_recipes.html.erb (202.6ms)
+  Rendered recipes/index.html.erb within layouts/application (213.0ms)
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/shared/_header.html.erb:20
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_header.html.erb:37
+  Rendered shared/_header.html.erb (24.2ms)
+  Rendered shared/_flash_types.html.erb (1.2ms)
+  Rendered shared/_footer.html.erb (2.7ms)
+Completed 200 OK in 1082ms (Views: 1019.0ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-26 22:27:35 -0400
+Processing by RecipesController#index as HTML
+  Rendering recipes/index.html.erb within layouts/application
+  [1m[36mRecipe Load (1.0ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY created_at desc[0m
+  ↳ app/views/recipes/_recipes.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Attachment Load (2.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/recipes/_recipes.html.erb:7
+  Rendered recipes/_recipes.html.erb (28.5ms)
+  Rendered recipes/index.html.erb within layouts/application (32.9ms)
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/shared/_header.html.erb:20
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_header.html.erb:37
+  Rendered shared/_header.html.erb (156.8ms)
+  Rendered shared/_flash_types.html.erb (4.7ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+Completed 200 OK in 500ms (Views: 482.5ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--400146e8958b4b90f7f98cf2fa3e1f04fc6df752/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTXpBd2VETXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--b815e16ee9d1d2d9205841d7b3f946b9f7b33835/logo-jpg.jpg" for 127.0.0.1 at 2019-03-26 22:27:36 -0400
+Started GET "/rails/active_storage/representations/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--757586528c3a9926b8e3548871ee47c8243af642/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTXpBd2VETXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--b815e16ee9d1d2d9205841d7b3f946b9f7b33835/logo-jpg.jpg" for 127.0.0.1 at 2019-03-26 22:27:36 -0400
+Processing by ActiveStorage::RepresentationsController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--400146e8958b4b90f7f98cf2fa3e1f04fc6df752", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTXpBd2VETXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--b815e16ee9d1d2d9205841d7b3f946b9f7b33835", "filename"=>"logo-jpg"}
+  [1m[36mActiveStorage::Blob Load (5.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/rahymov/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.1ms) [0m[34mChecked if file exists at key: variants/cQZ7fDpq7qXVDRKdYXqeYK1i/9e950b79e048422dca264816fec4b3cb16661070be759d0564d649edf8091a29 (yes)[0m
+[36m  Disk Storage (1.3ms) [0m[34mGenerated URL for file at key: variants/cQZ7fDpq7qXVDRKdYXqeYK1i/9e950b79e048422dca264816fec4b3cb16661070be759d0564d649edf8091a29 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlqVVZvM1prUndjVGR4V0ZaRVVrdGtXVmh4WlZsTE1Xa3ZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MzI6MzYuODUxWiIsInB1ciI6ImJsb2Jfa2V5In19--0ea27600312ae3a6b217c3463da6df1589ab27ed/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlqVVZvM1prUndjVGR4V0ZaRVVrdGtXVmh4WlZsTE1Xa3ZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MzI6MzYuODUxWiIsInB1ciI6ImJsb2Jfa2V5In19--0ea27600312ae3a6b217c3463da6df1589ab27ed/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg
+Completed 302 Found in 12ms (ActiveRecord: 5.2ms)
+
+
+Processing by ActiveStorage::RepresentationsController#show as JPEG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--757586528c3a9926b8e3548871ee47c8243af642", "variation_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCam9MY21WemFYcGxTU0lNTXpBd2VETXdNQVk2QmtWVSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--b815e16ee9d1d2d9205841d7b3f946b9f7b33835", "filename"=>"logo-jpg"}
+  [1m[36mActiveStorage::Blob Load (7.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /Users/rahymov/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+[36m  Disk Storage (0.1ms) [0m[34mChecked if file exists at key: variants/XHeJFdu7mgLf44JYDFoCLDyD/9e950b79e048422dca264816fec4b3cb16661070be759d0564d649edf8091a29 (yes)[0m
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: variants/XHeJFdu7mgLf44JYDFoCLDyD/9e950b79e048422dca264816fec4b3cb16661070be759d0564d649edf8091a29 (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlZU0dWS1JtUjFOMjFuVEdZME5FcFpSRVp2UTB4RWVVUXZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MzI6MzcuMDIzWiIsInB1ciI6ImJsb2Jfa2V5In19--34819c15032db476f115b6ab50dd8e088df4f113/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlZU0dWS1JtUjFOMjFuVEdZME5FcFpSRVp2UTB4RWVVUXZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MzI6MzcuMDIzWiIsInB1ciI6ImJsb2Jfa2V5In19--34819c15032db476f115b6ab50dd8e088df4f113/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg
+Completed 302 Found in 13ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlqVVZvM1prUndjVGR4V0ZaRVVrdGtXVmh4WlZsTE1Xa3ZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MzI6MzYuODUxWiIsInB1ciI6ImJsb2Jfa2V5In19--0ea27600312ae3a6b217c3463da6df1589ab27ed/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg" for 127.0.0.1 at 2019-03-26 22:27:38 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"logo-jpg.jpg\"; filename*=UTF-8''logo-jpg.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlqVVZvM1prUndjVGR4V0ZaRVVrdGtXVmh4WlZsTE1Xa3ZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MzI6MzYuODUxWiIsInB1ciI6ImJsb2Jfa2V5In19--0ea27600312ae3a6b217c3463da6df1589ab27ed", "filename"=>"logo-jpg"}
+[36m  Disk Storage (3.4ms) [0m[34mDownloaded file from key: variants/cQZ7fDpq7qXVDRKdYXqeYK1i/9e950b79e048422dca264816fec4b3cb16661070be759d0564d649edf8091a29[0m
+Completed 200 OK in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlZU0dWS1JtUjFOMjFuVEdZME5FcFpSRVp2UTB4RWVVUXZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MzI6MzcuMDIzWiIsInB1ciI6ImJsb2Jfa2V5In19--34819c15032db476f115b6ab50dd8e088df4f113/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg" for 127.0.0.1 at 2019-03-26 22:27:38 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"logo-jpg.jpg\"; filename*=UTF-8''logo-jpg.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJbWQyWVhKcFlXNTBjeTlZU0dWS1JtUjFOMjFuVEdZME5FcFpSRVp2UTB4RWVVUXZPV1U1TlRCaU56bGxNRFE0TkRJeVpHTmhNalkwT0RFMlptVmpOR0l6WTJJeE5qWTJNVEEzTUdKbE56VTVaREExTmpSa05qUTVaV1JtT0RBNU1XRXlPUVk2QmtWVSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MzI6MzcuMDIzWiIsInB1ciI6ImJsb2Jfa2V5In19--34819c15032db476f115b6ab50dd8e088df4f113", "filename"=>"logo-jpg"}
+[36m  Disk Storage (3.4ms) [0m[34mDownloaded file from key: variants/XHeJFdu7mgLf44JYDFoCLDyD/9e950b79e048422dca264816fec4b3cb16661070be759d0564d649edf8091a29[0m
+Completed 200 OK in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes.json" for 127.0.0.1 at 2019-03-26 22:27:41 -0400
+Processing by RecipesController#index as JSON
+  [1m[36mUser Load (47.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:11
+  [1m[36mRecipe Load (1.7ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY created_at desc[0m
+  ↳ app/controllers/recipes_controller.rb:11
+[active_model_serializers]   [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:11
+[active_model_serializers]   [1m[36mIngredient Load (2.0ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 2]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:11
+[active_model_serializers] No serializer found for resource: #<Ingredient id: 4, name: "Ing 1", recipe_id: 2, created_at: "2019-03-27 01:43:37", updated_at: "2019-03-27 01:43:37">
+[active_model_serializers]   [1m[36mDirection Load (1.9ms)[0m  [1m[34mSELECT "directions".* FROM "directions" WHERE "directions"."recipe_id" = $1[0m  [["recipe_id", 2]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:11
+[active_model_serializers] No serializer found for resource: #<Direction id: 4, step: "step 1", recipe_id: 2, created_at: "2019-03-27 01:43:37", updated_at: "2019-03-27 01:43:37">
+[active_model_serializers]   [1m[36mComment Load (2.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 2]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:11
+[active_model_serializers]   [1m[36mCategory Load (3.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "recipe_categories" ON "categories"."id" = "recipe_categories"."category_id" WHERE "recipe_categories"."recipe_id" = $1[0m  [["recipe_id", 2]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:11
+[active_model_serializers] No serializer found for resource: #<Category id: 9, name: "Turkish", created_at: "2019-03-27 01:40:25", updated_at: "2019-03-27 01:40:25">
+[active_model_serializers]   [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:11
+[active_model_serializers]   [1m[36mIngredient Load (0.9ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:11
+[active_model_serializers] No serializer found for resource: #<Ingredient id: 1, name: "ingredient 1", recipe_id: 1, created_at: "2019-03-27 01:42:19", updated_at: "2019-03-27 01:42:19">
+[active_model_serializers]   [1m[36mDirection Load (0.7ms)[0m  [1m[34mSELECT "directions".* FROM "directions" WHERE "directions"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:11
+[active_model_serializers] No serializer found for resource: #<Direction id: 1, step: "Direction 1", recipe_id: 1, created_at: "2019-03-27 01:42:19", updated_at: "2019-03-27 01:42:19">
+[active_model_serializers]   [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:11
+[active_model_serializers]   [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "recipe_categories" ON "categories"."id" = "recipe_categories"."category_id" WHERE "recipe_categories"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:11
+[active_model_serializers] No serializer found for resource: #<Category id: 1, name: "Cookies", created_at: "2019-03-27 01:40:25", updated_at: "2019-03-27 01:40:25">
+[active_model_serializers]   [1m[36mActiveStorage::Attachment Load (3.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/recipe_serializer.rb:11
+[active_model_serializers]   [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/recipe_serializer.rb:11
+[active_model_serializers] No serializer found for resource: #<Ingredient id: 4, name: "Ing 1", recipe_id: 2, created_at: "2019-03-27 01:43:37", updated_at: "2019-03-27 01:43:37">
+[active_model_serializers] No serializer found for resource: #<Direction id: 4, step: "step 1", recipe_id: 2, created_at: "2019-03-27 01:43:37", updated_at: "2019-03-27 01:43:37">
+[active_model_serializers] No serializer found for resource: #<Category id: 9, name: "Turkish", created_at: "2019-03-27 01:40:25", updated_at: "2019-03-27 01:40:25">
+[active_model_serializers]   [1m[36mActiveStorage::Attachment Load (2.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/recipe_serializer.rb:11
+[active_model_serializers]   [1m[36mActiveStorage::Blob Load (2.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/recipe_serializer.rb:11
+[active_model_serializers] No serializer found for resource: #<Ingredient id: 1, name: "ingredient 1", recipe_id: 1, created_at: "2019-03-27 01:42:19", updated_at: "2019-03-27 01:42:19">
+[active_model_serializers] No serializer found for resource: #<Direction id: 1, step: "Direction 1", recipe_id: 1, created_at: "2019-03-27 01:42:19", updated_at: "2019-03-27 01:42:19">
+[active_model_serializers] No serializer found for resource: #<Category id: 1, name: "Cookies", created_at: "2019-03-27 01:40:25", updated_at: "2019-03-27 01:40:25">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (229.73ms)
+Completed 200 OK in 458ms (Views: 381.5ms | ActiveRecord: 74.0ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--400146e8958b4b90f7f98cf2fa3e1f04fc6df752/logo-jpg.jpg" for 127.0.0.1 at 2019-03-26 22:27:42 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--757586528c3a9926b8e3548871ee47c8243af642/logo-jpg.jpg" for 127.0.0.1 at 2019-03-26 22:27:42 -0400
+Processing by ActiveStorage::BlobsController#show as JPEG
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--400146e8958b4b90f7f98cf2fa3e1f04fc6df752", "filename"=>"logo-jpg"}
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--757586528c3a9926b8e3548871ee47c8243af642", "filename"=>"logo-jpg"}
+  [1m[36mActiveStorage::Blob Load (2.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/rahymov/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mActiveStorage::Blob Load (2.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[36m  Disk Storage (0.9ms) [0m[34mGenerated URL for file at key: cQZ7fDpq7qXVDRKdYXqeYK1i (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJaDFqVVZvM1prUndjVGR4V0ZaRVVrdGtXVmh4WlZsTE1Xa0dPZ1pGVkE9PSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MzI6NDIuNTY1WiIsInB1ciI6ImJsb2Jfa2V5In19--1d3da9445cf4831d79759b98ca19a7b79ab5c9a2/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJaDFqVVZvM1prUndjVGR4V0ZaRVVrdGtXVmh4WlZsTE1Xa0dPZ1pGVkE9PSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MzI6NDIuNTY1WiIsInB1ciI6ImJsb2Jfa2V5In19--1d3da9445cf4831d79759b98ca19a7b79ab5c9a2/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg
+  ↳ /Users/rahymov/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Completed 302 Found in 11ms (ActiveRecord: 2.0ms)
+
+
+[36m  Disk Storage (0.8ms) [0m[34mGenerated URL for file at key: XHeJFdu7mgLf44JYDFoCLDyD (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJaDFZU0dWS1JtUjFOMjFuVEdZME5FcFpSRVp2UTB4RWVVUUdPZ1pGVkE9PSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MzI6NDIuNTY4WiIsInB1ciI6ImJsb2Jfa2V5In19--140e59ce424963ccf3fa8cdca107576017579370/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJaDFZU0dWS1JtUjFOMjFuVEdZME5FcFpSRVp2UTB4RWVVUUdPZ1pGVkE9PSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MzI6NDIuNTY4WiIsInB1ciI6ImJsb2Jfa2V5In19--140e59ce424963ccf3fa8cdca107576017579370/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg
+Completed 302 Found in 12ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJaDFqVVZvM1prUndjVGR4V0ZaRVVrdGtXVmh4WlZsTE1Xa0dPZ1pGVkE9PSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MzI6NDIuNTY1WiIsInB1ciI6ImJsb2Jfa2V5In19--1d3da9445cf4831d79759b98ca19a7b79ab5c9a2/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg" for 127.0.0.1 at 2019-03-26 22:27:42 -0400
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJaDFZU0dWS1JtUjFOMjFuVEdZME5FcFpSRVp2UTB4RWVVUUdPZ1pGVkE9PSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MzI6NDIuNTY4WiIsInB1ciI6ImJsb2Jfa2V5In19--140e59ce424963ccf3fa8cdca107576017579370/logo-jpg.jpg?content_type=image%2Fjpeg&disposition=inline%3B+filename%3D%22logo-jpg.jpg%22%3B+filename%2A%3DUTF-8%27%27logo-jpg.jpg" for 127.0.0.1 at 2019-03-26 22:27:42 -0400
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"logo-jpg.jpg\"; filename*=UTF-8''logo-jpg.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJaDFqVVZvM1prUndjVGR4V0ZaRVVrdGtXVmh4WlZsTE1Xa0dPZ1pGVkE9PSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MzI6NDIuNTY1WiIsInB1ciI6ImJsb2Jfa2V5In19--1d3da9445cf4831d79759b98ca19a7b79ab5c9a2", "filename"=>"logo-jpg"}
+Processing by ActiveStorage::DiskController#show as JPEG
+  Parameters: {"content_type"=>"image/jpeg", "disposition"=>"inline; filename=\"logo-jpg.jpg\"; filename*=UTF-8''logo-jpg.jpg", "encoded_key"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaEpJaDFZU0dWS1JtUjFOMjFuVEdZME5FcFpSRVp2UTB4RWVVUUdPZ1pGVkE9PSIsImV4cCI6IjIwMTktMDMtMjdUMDI6MzI6NDIuNTY4WiIsInB1ciI6ImJsb2Jfa2V5In19--140e59ce424963ccf3fa8cdca107576017579370", "filename"=>"logo-jpg"}
+[36m  Disk Storage (4.7ms) [0m[34mDownloaded file from key: cQZ7fDpq7qXVDRKdYXqeYK1i[0m
+Completed 200 OK in 8ms (ActiveRecord: 0.0ms)
+
+
+[36m  Disk Storage (5.7ms) [0m[34mDownloaded file from key: XHeJFdu7mgLf44JYDFoCLDyD[0m
+Completed 200 OK in 8ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes/2.json" for 127.0.0.1 at 2019-03-26 22:27:46 -0400
+Processing by RecipesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipe Load (0.5ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:68
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:38
+[active_model_serializers]   [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/recipe_serializer.rb:11
+[active_model_serializers]   [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/recipe_serializer.rb:11
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:38
+[active_model_serializers]   [1m[36mIngredient Load (0.4ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 2]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:38
+[active_model_serializers] No serializer found for resource: #<Ingredient id: 4, name: "Ing 1", recipe_id: 2, created_at: "2019-03-27 01:43:37", updated_at: "2019-03-27 01:43:37">
+[active_model_serializers]   [1m[36mDirection Load (0.4ms)[0m  [1m[34mSELECT "directions".* FROM "directions" WHERE "directions"."recipe_id" = $1[0m  [["recipe_id", 2]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:38
+[active_model_serializers] No serializer found for resource: #<Direction id: 4, step: "step 1", recipe_id: 2, created_at: "2019-03-27 01:43:37", updated_at: "2019-03-27 01:43:37">
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 2]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:38
+[active_model_serializers]   [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "recipe_categories" ON "categories"."id" = "recipe_categories"."category_id" WHERE "recipe_categories"."recipe_id" = $1[0m  [["recipe_id", 2]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:38
+[active_model_serializers] No serializer found for resource: #<Category id: 9, name: "Turkish", created_at: "2019-03-27 01:40:25", updated_at: "2019-03-27 01:40:25">
+[active_model_serializers] Rendered RecipeSerializer with ActiveModelSerializers::Adapter::Attributes (25.73ms)
+Completed 200 OK in 33ms (Views: 24.5ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/recipes.json" for 127.0.0.1 at 2019-03-26 22:27:54 -0400
+Processing by RecipesController#index as JSON
+  [1m[36mUser Load (33.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:11
+  [1m[36mRecipe Load (47.2ms)[0m  [1m[34mSELECT "recipes".* FROM "recipes" ORDER BY created_at desc[0m
+  ↳ app/controllers/recipes_controller.rb:11
+[active_model_serializers]   [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:11
+[active_model_serializers]   [1m[36mIngredient Load (1.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 2]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:11
+[active_model_serializers] No serializer found for resource: #<Ingredient id: 4, name: "Ing 1", recipe_id: 2, created_at: "2019-03-27 01:43:37", updated_at: "2019-03-27 01:43:37">
+[active_model_serializers]   [1m[36mDirection Load (4.5ms)[0m  [1m[34mSELECT "directions".* FROM "directions" WHERE "directions"."recipe_id" = $1[0m  [["recipe_id", 2]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:11
+[active_model_serializers] No serializer found for resource: #<Direction id: 4, step: "step 1", recipe_id: 2, created_at: "2019-03-27 01:43:37", updated_at: "2019-03-27 01:43:37">
+[active_model_serializers]   [1m[36mComment Load (1.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 2]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:11
+[active_model_serializers]   [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "recipe_categories" ON "categories"."id" = "recipe_categories"."category_id" WHERE "recipe_categories"."recipe_id" = $1[0m  [["recipe_id", 2]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:11
+[active_model_serializers] No serializer found for resource: #<Category id: 9, name: "Turkish", created_at: "2019-03-27 01:40:25", updated_at: "2019-03-27 01:40:25">
+[active_model_serializers]   [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:11
+[active_model_serializers]   [1m[36mIngredient Load (0.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:11
+[active_model_serializers] No serializer found for resource: #<Ingredient id: 1, name: "ingredient 1", recipe_id: 1, created_at: "2019-03-27 01:42:19", updated_at: "2019-03-27 01:42:19">
+[active_model_serializers]   [1m[36mDirection Load (0.6ms)[0m  [1m[34mSELECT "directions".* FROM "directions" WHERE "directions"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:11
+[active_model_serializers] No serializer found for resource: #<Direction id: 1, step: "Direction 1", recipe_id: 1, created_at: "2019-03-27 01:42:19", updated_at: "2019-03-27 01:42:19">
+[active_model_serializers]   [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:11
+[active_model_serializers]   [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "recipe_categories" ON "categories"."id" = "recipe_categories"."category_id" WHERE "recipe_categories"."recipe_id" = $1[0m  [["recipe_id", 1]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:11
+[active_model_serializers] No serializer found for resource: #<Category id: 1, name: "Cookies", created_at: "2019-03-27 01:40:25", updated_at: "2019-03-27 01:40:25">
+[active_model_serializers]   [1m[36mActiveStorage::Attachment Load (1.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/recipe_serializer.rb:11
+[active_model_serializers]   [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/recipe_serializer.rb:11
+[active_model_serializers] No serializer found for resource: #<Ingredient id: 4, name: "Ing 1", recipe_id: 2, created_at: "2019-03-27 01:43:37", updated_at: "2019-03-27 01:43:37">
+[active_model_serializers] No serializer found for resource: #<Direction id: 4, step: "step 1", recipe_id: 2, created_at: "2019-03-27 01:43:37", updated_at: "2019-03-27 01:43:37">
+[active_model_serializers] No serializer found for resource: #<Category id: 9, name: "Turkish", created_at: "2019-03-27 01:40:25", updated_at: "2019-03-27 01:40:25">
+[active_model_serializers]   [1m[36mActiveStorage::Attachment Load (1.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/recipe_serializer.rb:11
+[active_model_serializers]   [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/recipe_serializer.rb:11
+[active_model_serializers] No serializer found for resource: #<Ingredient id: 1, name: "ingredient 1", recipe_id: 1, created_at: "2019-03-27 01:42:19", updated_at: "2019-03-27 01:42:19">
+[active_model_serializers] No serializer found for resource: #<Direction id: 1, step: "Direction 1", recipe_id: 1, created_at: "2019-03-27 01:42:19", updated_at: "2019-03-27 01:42:19">
+[active_model_serializers] No serializer found for resource: #<Category id: 1, name: "Cookies", created_at: "2019-03-27 01:40:25", updated_at: "2019-03-27 01:40:25">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (96.72ms)
+Completed 200 OK in 190ms (Views: 85.1ms | ActiveRecord: 100.6ms)
+
+
+Started GET "/recipes/2.json" for 127.0.0.1 at 2019-03-26 22:27:55 -0400
+Processing by RecipesController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mRecipe Load (0.6ms)[0m  [1m[34mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:68
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/recipes_controller.rb:38
+[active_model_serializers]   [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Recipe"], ["name", "image"], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/recipe_serializer.rb:11
+[active_model_serializers]   [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/serializers/recipe_serializer.rb:11
+[active_model_serializers]   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:38
+[active_model_serializers]   [1m[36mIngredient Load (0.5ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients" WHERE "ingredients"."recipe_id" = $1[0m  [["recipe_id", 2]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:38
+[active_model_serializers] No serializer found for resource: #<Ingredient id: 4, name: "Ing 1", recipe_id: 2, created_at: "2019-03-27 01:43:37", updated_at: "2019-03-27 01:43:37">
+[active_model_serializers]   [1m[36mDirection Load (0.5ms)[0m  [1m[34mSELECT "directions".* FROM "directions" WHERE "directions"."recipe_id" = $1[0m  [["recipe_id", 2]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:38
+[active_model_serializers] No serializer found for resource: #<Direction id: 4, step: "step 1", recipe_id: 2, created_at: "2019-03-27 01:43:37", updated_at: "2019-03-27 01:43:37">
+[active_model_serializers]   [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = $1[0m  [["recipe_id", 2]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:38
+[active_model_serializers]   [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "recipe_categories" ON "categories"."id" = "recipe_categories"."category_id" WHERE "recipe_categories"."recipe_id" = $1[0m  [["recipe_id", 2]]
+[active_model_serializers]   ↳ app/controllers/recipes_controller.rb:38
+[active_model_serializers] No serializer found for resource: #<Category id: 9, name: "Turkish", created_at: "2019-03-27 01:40:25", updated_at: "2019-03-27 01:40:25">
+[active_model_serializers] Rendered RecipeSerializer with ActiveModelSerializers::Adapter::Attributes (31.92ms)
+Completed 200 OK in 39ms (Views: 29.5ms | ActiveRecord: 6.3ms)
+
+
