@@ -63,6 +63,7 @@ $(document).ready(function() {
 
 $(() => {
   listenForAllRecipesClick()
+  sortingRecipe()
 });
 // chekoh for click on navbar
 const listenForAllRecipesClick = () => {
@@ -102,6 +103,38 @@ const getAllRecipes = () => {
   })
 }
 
+const sortingRecipe = () => {
+  $("#sorting-recipe").on('click',function(e){
+    e.preventDefault()
+    // alert("sorting");
+    fetch(`/recipes.json`)
+      .then(response => response.json())
+        .then(recipes => {
+          $('.app-container').html('')
+          recipes.sort((a,b) => {
+              var nameA = a.title.toUpperCase();
+              var nameB = b.title.toUpperCase();
+              if (nameA < nameB) {
+                return -1;
+              }
+              if (nameA > nameB) {
+                return 1;
+              }
+              return 0;
+          })
+          // debugger
+          recipes.forEach((recipe) => {
+            let newRecipe = new Recipe(recipe)
+            let allRecipesHTML = newRecipe.recipeIndexHTML()
+
+            // debugger
+            $(".app-container").append(allRecipesHTML);
+            // console.log(newRecipe);
+        })
+      })
+
+  })
+}
 
 
 class Recipe {
